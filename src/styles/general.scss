@@ -1,0 +1,17 @@
+//Bootstrap import
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Font import
+@import "@fontsource/montserrat-alternates";
+
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  overflow-x: hidden;
+}
+
+//General styles
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
