@@ -1,7 +1,12 @@
-# Vue 3 + Vite
+# Portfolio
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Benvenuti nel mio portfolio! Questo sito è costruito con Vue.js e include diverse funzionalità e tecnologie avanzate.
 
-## Recommended IDE Setup
+## Funzionalità
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+- **Vue.js**: Framework JavaScript utilizzato per costruire l'interfaccia utente del sito.
+- **EmailJS**: Implementato nella sezione "Contattami" per inviare email direttamente dal sito.
+- **Flappy Bird**: Versione personalizzata del classico gioco Flappy Bird, sviluppata come progetto interattivo.
+- **API di GitHub**: Utilizzata nella sezione "Progetti" per recuperare e visualizzare i progetti pubblici da GitHub.
+- **Swiper**: Implementazione di Swiper per caroselli e gallerie di immagini.
+- **Offuscamento dei Dati**: Tecniche di offuscamento utilizzate per proteggere i dati sensibili dai crawler.
