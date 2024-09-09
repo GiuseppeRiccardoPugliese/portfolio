@@ -82,11 +82,11 @@ export default {
     }
 
     .main-text h1 {
-      animation: fadeIn 2s ease 0.3s forwards;
+      animation: fadeIn 3s ease 0.3s forwards;
     }
 
     .sub-text p {
-      animation: fadeIn 2s ease 0.7s forwards;
+      animation: fadeIn 3s ease 0.7s forwards;
     }
   }
 }

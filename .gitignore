@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-#File contente token per GitHub Api
+#File contente token per GitHub Api & SetUp EmailJs
 config.js

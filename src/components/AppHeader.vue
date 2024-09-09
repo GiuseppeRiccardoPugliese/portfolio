@@ -11,44 +11,33 @@ export default {
 </script>
 
 <template>
-  <header>
+  <!-- Controllo se la rotta attuale non e' quella della policy sulla privacy per mostrare la nav -->
+  <header v-if="this.$route.path !== '/terms&conditions'">
     <nav class="navbar-container">
       <ul class="nav nav-underline">
         <li class="nav-item">
-          <router-link
-            to="/"
-            class="nav-link"
-            aria-current="page"
-            :class="this.$route.path == '/' ? 'active' : ''"
-          >
+          <router-link to="/" class="nav-link" aria-current="page" :class="this.$route.path == '/' ? 'active' : ''">
             <i class="fa fa-home"></i>
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link
-            to="/about"
-            class="nav-link"
-            :class="this.$route.path == '/about' ? 'active' : ''"
-          >
+          <router-link to="/about" class="nav-link" :class="this.$route.path == '/about' ? 'active' : ''">
             <i class="fa fa-info-circle"></i>
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link
-            to="/contact"
-            class="nav-link"
-            :class="this.$route.path == '/contact' ? 'active' : ''"
-          >
+          <router-link to="/contact" class="nav-link" :class="this.$route.path == '/contact' ? 'active' : ''">
             <i class="fa-solid fa-phone"></i>
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link
-            to="/projects"
-            class="nav-link"
-            :class="this.$route.path == '/projects' ? 'active' : ''"
-          >
+          <router-link to="/projects" class="nav-link" :class="this.$route.path == '/projects' ? 'active' : ''">
             <i class="fa-solid fa-briefcase"></i>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/games" class="nav-link" :class="this.$route.path == '/games' ? 'active' : ''">
+            <i class="fa-solid fa-gamepad"></i>
           </router-link>
         </li>
       </ul>
@@ -73,10 +62,12 @@ export default {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 60px;
-  transition: width 0.3s ease; /* Transizione per la larghezza */
+  transition: width 0.3s ease;
+  /* Transizione per la larghezza */
 
   &:hover {
-    width: 150px; /* Larghezza all'hover del mouse */
+    width: 150px;
+    /* Larghezza all'hover del mouse */
   }
 
   .nav {
@@ -88,9 +79,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px; /* Height dei link */
+  height: 50px;
+  /* Height dei link */
   color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transizione per il colore di sfondo e del testo */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Transizione per il colore di sfondo e del testo */
 
   &:hover {
     background-color: #f0f0f0;
@@ -111,17 +104,21 @@ export default {
     margin: 0;
     border: 0;
     border-radius: 0;
+
     &:hover {
       width: 100%;
     }
+
     .nav {
       flex-direction: row;
       justify-content: space-evenly;
     }
+
     .nav-link {
       height: auto;
       width: 60px;
       padding: 10px;
+
       i {
         font-size: 20px;
       }

@@ -6,13 +6,20 @@ export default {
   name: "Contact",
   data() {
     return {
+      //EmailJs
       formSubmitted: false,
       serviceToken: config.serviceToken,
       template: config.template,
       publicKey: config.publicKey,
+      //Email Phone-Number
+      email: 'giuseppe.riccardo.pugliese@gmail.com',
+      phone: '+39 3314032414',
     };
   },
   methods: {
+    offuscate(text) { //Offuscare da CRAWLER
+      return text.split('').map(char => `&#${char.charCodeAt(0)};`).join('');
+    },
     async handleSubmit() {
       try {
         // Invio email utilizzando emailjs
@@ -22,13 +29,21 @@ export default {
           this.$refs.form, // Il riferimento al form
           this.publicKey // La public key
         );
-        console.log("Email inviata con successo!");
+        // console.log("Email inviata con successo!");
         // Imposto formSubmitted a true dopo l'invio del modulo cosi da far uscire il messaggio presente nel template
         this.formSubmitted = true;
       } catch (error) {
         console.error("Errore durante l'invio dell'email:", error);
       }
     },
+  },
+  computed: {
+    emailVisible() {
+      return this.offuscate(this.email);
+    },
+    phoneVisible() {
+      return this.offuscate(this.phone);
+    }
   },
 };
 </script>
@@ -43,44 +58,30 @@ export default {
         <form ref="form" @submit.prevent="handleSubmit" class="form">
           <div class="form-group">
             <label for="name" class="form-label">Nome</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              name="user_name"
-              required
-            />
+            <input type="text" class="form-control" id="name" name="user_name" required />
           </div>
           <div class="form-group">
             <label for="email" class="form-label">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="user_email"
-              required
-            />
+            <input type="email" class="form-control" id="email" name="user_email" required />
           </div>
           <div class="form-group">
             <label for="message" class="form-label">Messaggio</label>
-            <textarea
-              class="form-control"
-              id="message"
-              rows="5"
-              name="message"
-              required
-            ></textarea>
+            <textarea class="form-control" id="message" rows="5" name="message" required></textarea>
           </div>
 
-          <button
-            type="submit"
-            class="btn btn-primary mb-4"
-            :class="formSubmitted ? 'disabled' : ''"
-          >
+          <!-- Privacy -->
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="terms" name="terms" required />
+            <label class="form-check-label" for="terms">
+              Accetto i <a href="/terms&conditions" target="_blank">termini e condizioni della privacy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary mb-4" :class="formSubmitted ? 'disabled' : ''">
             Invia
           </button>
         </form>
-        <small>Inviami una email :</small>
+        <small>Inviami una email</small>
 
         <!-- Messaggio di ringraziamento -->
         <div v-if="formSubmitted" class="alert alert-success" role="alert">
@@ -91,15 +92,12 @@ export default {
       <!-- Informazioni di contatto -->
       <div class="contact-info">
         <h4 class="info-title">Informazioni di contatto</h4>
-        <p>Email: giuseppe.riccardo.pugliese@gmail.com</p>
-        <p>Telefono: +39 3314032414</p>
+        <p>Email: <span v-html="emailVisible"></span></p> <!-- OFFUSCAMENTO CRAWLER -->
+        <p>Telefono: <span v-html="phoneVisible"></span></p> <!-- OFFUSCAMENTO CRAWLER -->
         <p class="d-flex align-items-center">
           Linkedin:
-          <a
-            class="mx-1 d-flex"
-            href="https://www.linkedin.com/in/giuseppe-pugliese03/"
-            ><i class="fa-brands fa-linkedin fs-4"></i
-          ></a>
+          <a class="mx-1 d-flex" href="https://www.linkedin.com/in/giuseppe-pugliese03/"><i
+              class="fa-brands fa-linkedin fs-4"></i></a>
         </p>
       </div>
     </div>
@@ -190,6 +188,7 @@ export default {
 @media screen and (max-width: 767.98px) {
   .contact-section {
     padding: 80px 30px 0;
+
     p {
       word-break: break-all;
     }

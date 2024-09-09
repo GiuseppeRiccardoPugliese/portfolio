@@ -5,6 +5,8 @@ import About from "./pages/About.vue";
 import Home from "./pages/Home.vue";
 import Contact from "./pages/Contact.vue";
 import Projects from "./pages/Projects.vue";
+import Games from "./pages/Games.vue";
+import Terms_and_conditions from "./pages/Terms_and_conditions.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -29,16 +31,28 @@ const router = createRouter({
       name: "projects",
       component: Projects,
     },
+    {
+      path: "/games",
+      name: "games",
+      component: Games,
+    },
+    {
+      path: "/terms&conditions",
+      name: "terms_and_conditions",
+      component: Terms_and_conditions,
+    },
   ],
 });
 
-// Aggiungi un listener per l'evento load
 window.addEventListener("load", () => {
-  // Controlla l'URL corrente
+  // Controllo l'URL corrente
   const currentPath = window.location.pathname;
 
-  // Se l'URL è diverso dalla tua rotta principale, reimposta alle rotte originali
-  if (currentPath !== "/") {
+  // Definisco la rotte delle policy da escludere per il redirect
+  const excludedRoutes = ["/terms&conditions"];
+
+  // Se l'URL corrente non è nella lista delle rotte escluse e non è la rotta principale, reimposta alla rotta principale
+  if (currentPath !== "/" && !excludedRoutes.includes(currentPath)) {
     router.push("/");
   }
 });

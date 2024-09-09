@@ -41,28 +41,21 @@ export default {
 </script>
 
 <template>
-  <section
-    class="about-section d-flex flex-column justify-content-center h-100"
-  >
+  <section class="about-section d-flex flex-column justify-content-center h-100">
     <h2 class="text-center mb-5">About Me</h2>
 
     <div class="row about-content">
       <!-- Colonna sinistra - Immagine -->
       <div class="col-lg-4 d-flex align-items-center justify-content-center">
         <div class="profile-pic-container">
-          <img
-            :src="currentProfilePic"
-            alt="Profile Picture"
-            class="profile-pic object-fit-cover w-100 h-100"
-            @click="nextProfilePic"
-            @mouseover="stopAutoplay"
-            @mouseout="startAutoplay"
-          />
+          <img :src="currentProfilePic" alt="Profile Picture" class="profile-pic object-fit-cover w-100 h-100"
+            @click="nextProfilePic" @mouseover="stopAutoplay" @mouseout="startAutoplay" />
         </div>
       </div>
 
       <!-- Colonna destra - Esperienze, Formazione, Descrizione -->
       <div class="col-lg-8">
+
         <!-- Esperienze -->
         <div class="experience-box mt-md-3 mt-lg-0">
           <h4>Esperienze</h4>
@@ -97,7 +90,7 @@ export default {
               flessibile;
             </li>
             <li>
-              E non finisce qui! I ristoratori possono anche tenere traccia dei
+              I ristoratori possono anche tenere traccia dei
               guadagni mensili/annuali attraverso un pratico grafico che mostra
               l'ammontare delle vendite nel tempo.
             </li>
@@ -107,6 +100,7 @@ export default {
         <!-- Formazione -->
         <div class="education-box">
           <h4>Formazione</h4>
+          <p class="m-0">Experis <i class="fa-solid fa-arrow-right"></i> Power-Up Java</p>
           <p class="m-0">Boolean Careers</p>
         </div>
 
@@ -115,13 +109,12 @@ export default {
           <h4>Descrizione</h4>
           <p class="m-0">
             Ciao a tutti! 😁 Sono Giuseppe, uno Jr Full Stack Web Developer di
-            20 anni, vivo a Napoli e ho recentemente completato il bootcamp di
-            Boolean. Fin da quando ero bambino, ho coltivato una forte passione
-            per i videogiochi e ho iniziato ad immergermi nel mondo degli
-            E-Sport attraverso giochi come
-            <a class="text-dark" href="https://lol.fandom.com/wiki/AChuckArell"
-              >League of Legends</a
-            >. 🖥️ Questa passione mi ha portato a sviluppare un profondo
+            21 anni, vivo a Napoli e ho completato il bootcamp di
+            Boolean proseguendo con l'academy di Java con Experis. Fin da quando ero bambino,
+            ho coltivato una forte passione per i videogiochi e ho iniziato ad
+            immergermi nel mondo degli E-Sport attraverso giochi come
+            <a class="text-dark" href="https://lol.fandom.com/wiki/AChuckArell">League of Legends </a>. 🖥️ Questa
+            passione mi ha portato a sviluppare un profondo
             interesse per l'informatica e la programmazione decidendo così di
             voler approfondire a tutto tondo questo mondo.
           </p>
@@ -130,12 +123,8 @@ export default {
 
       <!-- Download CV -->
       <div class="cv-download text-center my-5">
-        <a
-          class="text-decoration-none text-black p-3 bg-dark-subtle rounded-2"
-          href="../assets/GiuseppeRiccardoPuglieseCV.pdf"
-          download
-          >SCARICA CV</a
-        >
+        <a class="text-decoration-none text-black p-3 bg-dark-subtle rounded-2"
+          href="../../public/Giuseppe_Riccardo_Pugliese_CV.pdf" download>SCARICA CV</a>
       </div>
     </div>
   </section>
@@ -146,12 +135,14 @@ export default {
 
 .about-section {
   padding: 48px 100px 0;
+  background-color: #f8f9fa;
 }
 
 .about-content {
   .left-column {
     height: 100%;
   }
+
   .profile-pic-container {
     height: 500px;
     width: 400px;
@@ -160,6 +151,7 @@ export default {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
   }
+
   .profile-pic {
     transition: transform 0.3s ease-in-out;
   }
@@ -180,11 +172,13 @@ export default {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
+
     h4 {
       margin-bottom: 10px;
     }
   }
 }
+
 .experience-box:hover,
 .education-box:hover,
 .description:hover,
@@ -198,6 +192,7 @@ export default {
 
     .col-lg-8 {
       margin-top: 20px;
+
       .cv-download {
         margin-bottom: 30px;
       }
