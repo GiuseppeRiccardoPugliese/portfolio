@@ -76,7 +76,7 @@ export default {
         (tech) => tech.name.toLowerCase() === language?.toLowerCase()
       );
       // Return del percorso dell'immagine o un'immagine di default se la tecnologia non è trovata
-      return tech ? `/public/${tech.img}` : '/public/noImageFound.webp';
+      return tech ? `/${tech.img}` : '/noImageFound.webp';
     },
 
     async getRepo() {
@@ -213,7 +213,7 @@ export default {
       //ciclo per le slide del carosello
       <swiper-slide v-for="(tech, index) in technologies" :key="index"
         class="d-flex justify-content-center align-items-center skill-slide">
-        <img :src="`/public/${tech.img}`" :alt="tech.name" class="tech-logo" />
+        <img :src="`/${tech.img}`" :alt="tech.name" class="tech-logo" />
       </swiper-slide>
     </swiper>
 
