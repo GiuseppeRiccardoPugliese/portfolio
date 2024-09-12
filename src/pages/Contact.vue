@@ -1,6 +1,6 @@
 <script>
 import emailjs from "@emailjs/browser";
-import config from "../config.js";
+// import config from "../config.js";
 
 export default {
   name: "Contact",
