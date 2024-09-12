@@ -1,6 +1,6 @@
 <script>
 import axios from "axios";
-// import config from "../config.js";
+import config from "../config.js";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
