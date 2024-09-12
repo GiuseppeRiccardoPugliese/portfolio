@@ -4,11 +4,11 @@ export default {
   data() {
     return {
       profilePics: [
-        "/src/assets/profilepic.jpg",
-        "/src/assets/pic2.jpeg",
-        "/src/assets/exeedpic4.jpg",
-        "/src/assets/pic3.jpg",
-        "/src/assets/exeedpic5.jpg",
+        "public/profilepic.jpg",
+        "public/pic2.jpeg",
+        "public/exeedpic4.jpg",
+        "public/pic3.jpg",
+        "public/exeedpic5.jpg",
       ],
       currentPicIndex: 0,
       autoplayInterval: null,

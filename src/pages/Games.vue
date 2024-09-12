@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import birdImage from "../assets/flappy_bird_icon.svg";
+import birdImage from "/public/flappy_bird_icon.svg";
 
 export default {
   data() {
@@ -172,7 +172,7 @@ export default {
   background-color: #f8f9fa;
 
   canvas {
-    background: url("/src/assets/flappy_bird_backdrop.png") repeat-x;
+    background: url("/public/flappy_bird_backdrop.png") repeat-x;
     background-size: cover;
     max-width: 100%;
     height: auto;

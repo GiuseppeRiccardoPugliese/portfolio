@@ -64,9 +64,9 @@ export default {
   },
   methods: {
     //Function per il path dell'img
-    getImgUrl(img) {
-      return new URL(`/src/assets/${img}`, import.meta.url).href;
-    },
+    // getImgUrl(img) {
+    //   return new URL(`/src/assets/${img}`, import.meta.url).href;
+    // },
     //Function per il path dell'img nelle card
     getTechnologyImage(language) {
       // Tecnologia corrispondente al linguaggio
@@ -74,7 +74,7 @@ export default {
         (tech) => tech.name.toLowerCase() === language?.toLowerCase()
       );
       // Return del percorso dell'immagine o un'immagine di default se la tecnologia non è trovata
-      return tech ? `/src/assets/${tech.img}` : '/src/assets/noImageFound.webp';
+      return tech ? `/public/${tech.img}` : '/public/noImageFound.webp';
     },
 
     async getRepo() {
@@ -211,7 +211,7 @@ export default {
       //ciclo per le slide del carosello
       <swiper-slide v-for="(tech, index) in technologies" :key="index"
         class="d-flex justify-content-center align-items-center skill-slide">
-        <img :src="getImgUrl(tech.img)" :alt="tech.name" class="tech-logo" />
+        <img :src="`/public/${tech.img}`" :alt="tech.name" class="tech-logo" />
       </swiper-slide>
     </swiper>
 
