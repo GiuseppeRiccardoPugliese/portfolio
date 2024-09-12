@@ -104,7 +104,7 @@ export default {
 
           // Aggiungo i repository della pagina corrente all'array allRepos[]
           allRepos.push(...response.data);
-          console.log(response.data);
+          // console.log(response.data);
           // Se la pagina corrente ha meno di 100 risultati, interrompo il ciclo
           if (response.data.length < 100) {
             break;

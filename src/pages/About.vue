@@ -135,7 +135,7 @@ export default {
 
 .about-section {
   padding: 48px 100px 0;
-  background-color: #f8f9fa;
+  // background-color: #f8f9fa;
 }
 
 .about-content {
