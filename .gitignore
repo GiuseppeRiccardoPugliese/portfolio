@@ -25,3 +25,4 @@ dist-ssr
 
 #File contente token per GitHub Api & SetUp EmailJs
 config.js
+.env
