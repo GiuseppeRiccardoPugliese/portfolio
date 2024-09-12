@@ -1,6 +1,6 @@
 <script>
 import axios from "axios";
-import config from "../config.js";
+// import config from "../config.js";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -14,7 +14,9 @@ export default {
   data() {
     return {
       repositories: [], // Array contenente le mie repo
-      token: config.token, // Token
+      // Token
+      token: process.env.VUE_APP_TOKEN,
+      // token: config.token,
       searchDone: false, // Variabile per vedere se la ricerca è stata effettuata
       loading: false, // Loader
       currentPage: 1, // Pagina corrente

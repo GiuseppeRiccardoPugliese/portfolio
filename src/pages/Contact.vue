@@ -1,6 +1,6 @@
 <script>
 import emailjs from "@emailjs/browser";
-import config from "../config.js";
+// import config from "../config.js";
 
 export default {
   name: "Contact",
@@ -8,9 +8,12 @@ export default {
     return {
       //EmailJs
       formSubmitted: false,
-      serviceToken: config.serviceToken,
-      template: config.template,
-      publicKey: config.publicKey,
+      // serviceToken: config.serviceToken,
+      // template: config.template,
+      // publicKey: config.publicKey,
+      serviceToken: process.env.VUE_APP_SERVICE_TOKEN,
+      template: process.env.VUE_APP_TEMPLATE,
+      publicKey: process.env.VUE_APP_PUBLIC_KEY,
       //Email Phone-Number
       email: 'giuseppe.riccardo.pugliese@gmail.com',
       phone: '+39 3314032414',
