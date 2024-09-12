@@ -4,11 +4,11 @@ export default {
   data() {
     return {
       profilePics: [
-        "public/profilepic.jpg",
-        "public/pic2.jpeg",
-        "public/exeedpic4.jpg",
-        "public/pic3.jpg",
-        "public/exeedpic5.jpg",
+        "/profilepic.jpg",
+        "/pic2.jpeg",
+        "/exeedpic4.jpg",
+        "/pic3.jpg",
+        "/exeedpic5.jpg",
       ],
       currentPicIndex: 0,
       autoplayInterval: null,
@@ -124,7 +124,7 @@ export default {
       <!-- Download CV -->
       <div class="cv-download text-center my-5">
         <a class="text-decoration-none text-black p-3 bg-dark-subtle rounded-2"
-          href="../../public/Giuseppe_Riccardo_Pugliese_CV.pdf" download>SCARICA CV</a>
+          href="/Giuseppe_Riccardo_Pugliese_CV.pdf" download>SCARICA CV</a>
       </div>
     </div>
   </section>
