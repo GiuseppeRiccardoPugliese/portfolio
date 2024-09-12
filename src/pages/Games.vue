@@ -57,7 +57,7 @@ export default {
       this.gameOver = false;
       this.canvas = this.$refs.gameCanvas;
 
-      this.gameInterval = setInterval(this.draw, 20);
+      this.gameInterval = setInterval(this.draw, 30);
       this.gameStarted = true;
     },
     restartGame() {
@@ -137,14 +137,49 @@ export default {
       };
     },
     checkCollision(bird, pipe) {
+      // Hitbox dell'uccello
+      const birdHitbox = {
+        x: bird.x + 5, // Buffer per evitare collisioni indesiderate
+        y: bird.y + 5,
+        width: bird.width - 17, // Ridotto per margine di sicurezza
+        height: bird.height - 17
+      };
+
+      // Hitbox delle pipe
+      const topPipeHitbox = {
+        x: pipe.x,
+        y: 0,
+        width: pipe.width,
+        height: pipe.top
+      };
+
+      const bottomPipeHitbox = {
+        x: pipe.x,
+        y: this.canvas.height - pipe.bottom,
+        width: pipe.width,
+        height: pipe.bottom
+      };
+
+      // Controllo collisione con la pipe superiore
       if (
-        bird.y < pipe.top ||
-        bird.y + bird.height > this.canvas.height - pipe.bottom
+        birdHitbox.x < topPipeHitbox.x + topPipeHitbox.width &&
+        birdHitbox.x + birdHitbox.width > topPipeHitbox.x &&
+        birdHitbox.y < topPipeHitbox.y + topPipeHitbox.height &&
+        birdHitbox.y + birdHitbox.height > topPipeHitbox.y
       ) {
-        if (bird.x + bird.width > pipe.x && bird.x < pipe.x + pipe.width) {
-          return true;
-        }
+        return true;
       }
+
+      // Controllo collisione con la pipe inferiore
+      if (
+        birdHitbox.x < bottomPipeHitbox.x + bottomPipeHitbox.width &&
+        birdHitbox.x + birdHitbox.width > bottomPipeHitbox.x &&
+        birdHitbox.y < bottomPipeHitbox.y + bottomPipeHitbox.height &&
+        birdHitbox.y + birdHitbox.height > bottomPipeHitbox.y
+      ) {
+        return true;
+      }
+
       return false;
     },
     endGame() {
