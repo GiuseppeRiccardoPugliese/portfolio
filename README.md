@@ -10,3 +10,4 @@ Benvenuti nel mio portfolio! Questo sito è costruito con Vue.js e include diver
 - **API di GitHub**: Utilizzata nella sezione "Progetti" per recuperare e visualizzare i progetti pubblici da GitHub.
 - **Swiper**: Implementazione di Swiper per caroselli e gallerie di immagini.
 - **Offuscamento dei Dati**: Tecniche di offuscamento utilizzate per proteggere i dati sensibili dai crawler.
+- **Deploy**: Netlify.
