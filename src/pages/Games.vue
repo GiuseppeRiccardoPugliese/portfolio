@@ -70,11 +70,9 @@ export default {
       const ctx = this.canvas.getContext("2d");
       ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      // Disegniamo l'uccello
-      const birdImg = new Image();
-      birdImg.src = birdImage; // Percorso dell'immagine dell'uccello
+
       ctx.drawImage(
-        birdImg,
+        this.bird.img,
         this.bird.x,
         this.bird.y,
         this.bird.width,
@@ -190,6 +188,9 @@ export default {
   mounted() {
     this.canvas = this.$refs.gameCanvas;
     window.addEventListener("keydown", this.onSpacePressed);
+
+    this.bird.img = new Image();
+    this.bird.img.src = birdImage;
   },
   beforeDestroy() {
     clearInterval(this.gameInterval);
